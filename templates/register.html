@@ -6,6 +6,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
     <h1>Register</h1>
     <form action="" method="post">
         {{ form.hidden_tag() }}

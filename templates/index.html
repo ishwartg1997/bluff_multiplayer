@@ -1,39 +1,13 @@
 <html lang="">
-<style>
-    button {
-        border: 1px solid #0066cc;
-        background-color: #0099cc;
-        color: #ffffff;
-        padding: 5px 10px;
-    }
 
-    button:hover {
-        border: 1px solid #0099cc;
-        background-color: #00aacc;
-        color: #ffffff;
-        padding: 5px 10px;
-    }
-
-    button:disabled,
-    button[disabled] {
-        border: 1px solid #999999;
-        background-color: #cccccc;
-        color: #666666;
-    }
-
-    table, th, td {
-        border: 1px solid black;
-        background-color: #f1f1c1;
-    }
-
-</style>
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}"> 
 {% extends "base.html" %}
 {% block content %}
     <body>
     <h1>Hello, Welcome to The Bluff Game!</h1>
     <h3>Greetings {{ user.username }}</h3>
     <h3>Your Stats:</h3>
-    <table style="width:30%">
+    <table class="center">
         <tr>
             <th>Wins</th>
             <th>Losses</th>
@@ -47,7 +21,7 @@
     </table>
     <br>
     <h3>Global Stats:</h3>
-    <table style="width:30%">
+    <table class="center">
         <tr>
             <th>User</th>
             <th>Wins</th>

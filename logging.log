@@ -3,3 +3,98 @@
 2020-03-15 23:38:33,869 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-03-15 23:40:59,108 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 2020-03-15 23:41:17,852 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:36:07,297 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:36:10,679 INFO werkzeug Thread-1 : 127.0.0.1 - - [16/Mar/2020 00:36:10] "[32mGET / HTTP/1.1[0m" 302 -
+2020-03-16 00:36:10,701 INFO werkzeug Thread-2 : 127.0.0.1 - - [16/Mar/2020 00:36:10] "[37mGET /login?next=%2F HTTP/1.1[0m" 200 -
+2020-03-16 00:36:10,758 INFO werkzeug Thread-3 : 127.0.0.1 - - [16/Mar/2020 00:36:10] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:36:21,297 INFO werkzeug Thread-4 : 127.0.0.1 - - [16/Mar/2020 00:36:21] "[32mPOST /login?next=%2F HTTP/1.1[0m" 302 -
+2020-03-16 00:36:21,304 INFO werkzeug Thread-5 : 127.0.0.1 - - [16/Mar/2020 00:36:21] "[37mGET /login HTTP/1.1[0m" 200 -
+2020-03-16 00:36:21,392 INFO werkzeug Thread-6 : 127.0.0.1 - - [16/Mar/2020 00:36:21] "[36mGET /static/styles/mainpage.css HTTP/1.1[0m" 304 -
+2020-03-16 00:36:28,079 INFO werkzeug Thread-7 : 127.0.0.1 - - [16/Mar/2020 00:36:28] "[32mPOST /login HTTP/1.1[0m" 302 -
+2020-03-16 00:36:28,094 INFO werkzeug Thread-8 : 127.0.0.1 - - [16/Mar/2020 00:36:28] "[37mGET / HTTP/1.1[0m" 200 -
+2020-03-16 00:36:28,164 INFO werkzeug Thread-9 : 127.0.0.1 - - [16/Mar/2020 00:36:28] "[36mGET /static/styles/mainpage.css HTTP/1.1[0m" 304 -
+2020-03-16 00:39:05,767 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:39:09,402 INFO werkzeug Thread-1 : 127.0.0.1 - - [16/Mar/2020 00:39:09] "[37mGET / HTTP/1.1[0m" 200 -
+2020-03-16 00:39:09,448 INFO werkzeug Thread-2 : 127.0.0.1 - - [16/Mar/2020 00:39:09] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:39:14,011 INFO werkzeug Thread-3 : 127.0.0.1 - - [16/Mar/2020 00:39:14] "[37mGET /games HTTP/1.1[0m" 200 -
+2020-03-16 00:39:14,063 INFO werkzeug Thread-4 : 127.0.0.1 - - [16/Mar/2020 00:39:14] "[36mGET /static/styles/mainpage.css HTTP/1.1[0m" 304 -
+2020-03-16 00:39:16,415 INFO werkzeug Thread-5 : 127.0.0.1 - - [16/Mar/2020 00:39:16] "[37mGET /join_game/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:39:16,472 INFO werkzeug Thread-6 : 127.0.0.1 - - [16/Mar/2020 00:39:16] "[36mGET /static/styles/mainpage.css HTTP/1.1[0m" 304 -
+2020-03-16 00:39:16,506 INFO werkzeug Thread-7 : 127.0.0.1 - - [16/Mar/2020 00:39:16] "[37mGET /stream/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:39:50,213 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:39:53,084 INFO werkzeug Thread-1 : 127.0.0.1 - - [16/Mar/2020 00:39:53] "[37mGET /join_game/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:39:53,133 INFO werkzeug Thread-2 : 127.0.0.1 - - [16/Mar/2020 00:39:53] "[36mGET /static/styles/mainpage.css HTTP/1.1[0m" 304 -
+2020-03-16 00:39:53,166 INFO werkzeug Thread-3 : 127.0.0.1 - - [16/Mar/2020 00:39:53] "[37mGET /stream/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:42:53,895 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:42:56,927 INFO werkzeug Thread-1 : 127.0.0.1 - - [16/Mar/2020 00:42:56] "[37mGET /stream/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:42:57,839 INFO werkzeug Thread-2 : 127.0.0.1 - - [16/Mar/2020 00:42:57] "[32mGET /join_game/bluff HTTP/1.1[0m" 302 -
+2020-03-16 00:42:57,861 INFO werkzeug Thread-3 : 127.0.0.1 - - [16/Mar/2020 00:42:57] "[37mGET /login HTTP/1.1[0m" 200 -
+2020-03-16 00:42:57,912 INFO werkzeug Thread-4 : 127.0.0.1 - - [16/Mar/2020 00:42:57] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:43:03,945 INFO werkzeug Thread-5 : 127.0.0.1 - - [16/Mar/2020 00:43:03] "[32mPOST /login HTTP/1.1[0m" 302 -
+2020-03-16 00:43:03,958 INFO werkzeug Thread-6 : 127.0.0.1 - - [16/Mar/2020 00:43:03] "[37mGET / HTTP/1.1[0m" 200 -
+2020-03-16 00:43:04,016 INFO werkzeug Thread-7 : 127.0.0.1 - - [16/Mar/2020 00:43:04] "[36mGET /static/styles/mainpage.css HTTP/1.1[0m" 304 -
+2020-03-16 00:43:05,846 INFO werkzeug Thread-8 : 127.0.0.1 - - [16/Mar/2020 00:43:05] "[37mGET /games HTTP/1.1[0m" 200 -
+2020-03-16 00:43:05,898 INFO werkzeug Thread-9 : 127.0.0.1 - - [16/Mar/2020 00:43:05] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:43:07,711 INFO werkzeug Thread-10 : 127.0.0.1 - - [16/Mar/2020 00:43:07] "[37mGET /join_game/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:43:07,756 INFO werkzeug Thread-11 : 127.0.0.1 - - [16/Mar/2020 00:43:07] "[36mGET /static/styles/mainpage.css HTTP/1.1[0m" 304 -
+2020-03-16 00:43:07,800 INFO werkzeug Thread-12 : 127.0.0.1 - - [16/Mar/2020 00:43:07] "[37mGET /stream/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:44:33,673 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:44:41,754 INFO werkzeug Thread-1 : 127.0.0.1 - - [16/Mar/2020 00:44:41] "[37mGET /join_game/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:44:41,809 INFO werkzeug Thread-2 : 127.0.0.1 - - [16/Mar/2020 00:44:41] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:44:41,856 INFO werkzeug Thread-3 : 127.0.0.1 - - [16/Mar/2020 00:44:41] "[37mGET /stream/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:45:08,880 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:45:10,143 INFO werkzeug Thread-1 : 127.0.0.1 - - [16/Mar/2020 00:45:10] "[37mGET /join_game/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:45:10,188 INFO werkzeug Thread-2 : 127.0.0.1 - - [16/Mar/2020 00:45:10] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:45:10,238 INFO werkzeug Thread-3 : 127.0.0.1 - - [16/Mar/2020 00:45:10] "[37mGET /stream/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:45:21,518 INFO werkzeug Thread-4 : 127.0.0.1 - - [16/Mar/2020 00:45:21] "[37mGET / HTTP/1.1[0m" 200 -
+2020-03-16 00:45:21,569 INFO werkzeug Thread-5 : 127.0.0.1 - - [16/Mar/2020 00:45:21] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:45:30,497 INFO werkzeug Thread-7 : 127.0.0.1 - - [16/Mar/2020 00:45:30] "[37mGET / HTTP/1.1[0m" 200 -
+2020-03-16 00:45:30,548 INFO werkzeug Thread-8 : 127.0.0.1 - - [16/Mar/2020 00:45:30] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:45:44,151 INFO werkzeug Thread-10 : 127.0.0.1 - - [16/Mar/2020 00:45:44] "[37mGET /games HTTP/1.1[0m" 200 -
+2020-03-16 00:45:44,220 INFO werkzeug Thread-11 : 127.0.0.1 - - [16/Mar/2020 00:45:44] "[36mGET /static/styles/mainpage.css HTTP/1.1[0m" 304 -
+2020-03-16 00:45:48,076 INFO werkzeug Thread-12 : 127.0.0.1 - - [16/Mar/2020 00:45:48] "[37mGET /join_game/ten HTTP/1.1[0m" 200 -
+2020-03-16 00:45:48,129 INFO werkzeug Thread-13 : 127.0.0.1 - - [16/Mar/2020 00:45:48] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:45:48,164 INFO werkzeug Thread-14 : 127.0.0.1 - - [16/Mar/2020 00:45:48] "[37mGET /stream/ten HTTP/1.1[0m" 200 -
+2020-03-16 00:47:05,601 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:47:09,656 INFO werkzeug Thread-1 : 127.0.0.1 - - [16/Mar/2020 00:47:09] "[37mGET /stream/ten HTTP/1.1[0m" 200 -
+2020-03-16 00:47:10,721 INFO werkzeug Thread-2 : 127.0.0.1 - - [16/Mar/2020 00:47:10] "[37mGET /join_game/ten HTTP/1.1[0m" 200 -
+2020-03-16 00:47:10,775 INFO werkzeug Thread-3 : 127.0.0.1 - - [16/Mar/2020 00:47:10] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:47:10,818 INFO werkzeug Thread-4 : 127.0.0.1 - - [16/Mar/2020 00:47:10] "[37mGET /stream/ten HTTP/1.1[0m" 200 -
+2020-03-16 00:47:14,037 INFO werkzeug Thread-5 : 127.0.0.1 - - [16/Mar/2020 00:47:14] "[37mGET / HTTP/1.1[0m" 200 -
+2020-03-16 00:47:14,092 INFO werkzeug Thread-6 : 127.0.0.1 - - [16/Mar/2020 00:47:14] "[36mGET /static/styles/mainpage.css HTTP/1.1[0m" 304 -
+2020-03-16 00:48:11,546 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:48:15,951 INFO werkzeug Thread-1 : 127.0.0.1 - - [16/Mar/2020 00:48:15] "[37mGET / HTTP/1.1[0m" 200 -
+2020-03-16 00:48:15,999 INFO werkzeug Thread-2 : 127.0.0.1 - - [16/Mar/2020 00:48:15] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:48:18,643 INFO werkzeug Thread-3 : 127.0.0.1 - - [16/Mar/2020 00:48:18] "[37mGET / HTTP/1.1[0m" 200 -
+2020-03-16 00:48:18,712 INFO werkzeug Thread-4 : 127.0.0.1 - - [16/Mar/2020 00:48:18] "[36mGET /static/styles/mainpage.css HTTP/1.1[0m" 304 -
+2020-03-16 00:48:20,209 INFO werkzeug Thread-5 : 127.0.0.1 - - [16/Mar/2020 00:48:20] "[37mGET /games HTTP/1.1[0m" 200 -
+2020-03-16 00:48:20,268 INFO werkzeug Thread-6 : 127.0.0.1 - - [16/Mar/2020 00:48:20] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:50:58,640 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:50:58,859 INFO werkzeug Thread-1 : 127.0.0.1 - - [16/Mar/2020 00:50:58] "[37mGET / HTTP/1.1[0m" 200 -
+2020-03-16 00:50:58,944 INFO werkzeug Thread-2 : 127.0.0.1 - - [16/Mar/2020 00:50:58] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:51:06,383 INFO werkzeug Thread-3 : 127.0.0.1 - - [16/Mar/2020 00:51:06] "[37mGET /games HTTP/1.1[0m" 200 -
+2020-03-16 00:51:06,465 INFO werkzeug Thread-4 : 127.0.0.1 - - [16/Mar/2020 00:51:06] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:51:08,706 INFO werkzeug Thread-5 : 127.0.0.1 - - [16/Mar/2020 00:51:08] "[37mGET /join_game/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:51:08,770 INFO werkzeug Thread-6 : 127.0.0.1 - - [16/Mar/2020 00:51:08] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:51:08,804 INFO werkzeug Thread-7 : 127.0.0.1 - - [16/Mar/2020 00:51:08] "[37mGET /stream/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:52:07,104 INFO werkzeug Thread-8 : 127.0.0.1 - - [16/Mar/2020 00:52:07] "[37mGET /join_game/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:52:07,147 INFO werkzeug Thread-9 : 127.0.0.1 - - [16/Mar/2020 00:52:07] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:52:07,199 INFO werkzeug Thread-10 : 127.0.0.1 - - [16/Mar/2020 00:52:07] "[37mGET /stream/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:53:51,823 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:53:53,019 INFO werkzeug Thread-1 : 127.0.0.1 - - [16/Mar/2020 00:53:53] "[37mGET /join_game/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:53:53,063 INFO werkzeug Thread-2 : 127.0.0.1 - - [16/Mar/2020 00:53:53] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:53:53,105 INFO werkzeug Thread-3 : 127.0.0.1 - - [16/Mar/2020 00:53:53] "[37mGET /stream/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:53:58,969 INFO werkzeug Thread-4 : 127.0.0.1 - - [16/Mar/2020 00:53:58] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:54:09,914 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:54:12,189 INFO werkzeug Thread-1 : 127.0.0.1 - - [16/Mar/2020 00:54:12] "[37mGET /join_game/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:54:12,258 INFO werkzeug Thread-2 : 127.0.0.1 - - [16/Mar/2020 00:54:12] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:54:12,301 INFO werkzeug Thread-3 : 127.0.0.1 - - [16/Mar/2020 00:54:12] "[37mGET /stream/bluff HTTP/1.1[0m" 200 -
+2020-03-16 00:54:17,508 INFO werkzeug Thread-4 : 127.0.0.1 - - [16/Mar/2020 00:54:17] "[37mGET / HTTP/1.1[0m" 200 -
+2020-03-16 00:54:17,580 INFO werkzeug Thread-5 : 127.0.0.1 - - [16/Mar/2020 00:54:17] "[36mGET /static/styles/mainpage.css HTTP/1.1[0m" 304 -
+2020-03-16 00:55:29,582 INFO werkzeug MainThread :  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+2020-03-16 00:55:35,053 INFO werkzeug Thread-1 : 127.0.0.1 - - [16/Mar/2020 00:55:35] "[37mGET / HTTP/1.1[0m" 200 -
+2020-03-16 00:55:35,113 INFO werkzeug Thread-2 : 127.0.0.1 - - [16/Mar/2020 00:55:35] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
+2020-03-16 00:55:41,463 INFO werkzeug Thread-3 : 127.0.0.1 - - [16/Mar/2020 00:55:41] "[32mGET /logout HTTP/1.1[0m" 302 -
+2020-03-16 00:55:41,483 INFO werkzeug Thread-4 : 127.0.0.1 - - [16/Mar/2020 00:55:41] "[32mGET / HTTP/1.1[0m" 302 -
+2020-03-16 00:55:41,938 INFO werkzeug Thread-5 : 127.0.0.1 - - [16/Mar/2020 00:55:41] "[37mGET /login?next=%2F HTTP/1.1[0m" 200 -
+2020-03-16 00:55:42,016 INFO werkzeug Thread-6 : 127.0.0.1 - - [16/Mar/2020 00:55:42] "[37mGET /static/styles/mainpage.css HTTP/1.1[0m" 200 -
