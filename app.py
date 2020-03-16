@@ -15,7 +15,7 @@ from flask_wtf.csrf import CSRFProtect
 from flask import session
 from datetime import timedelta
 import time
-logging.basicConfig(filename='logging.log', level=logging.CRITICAL,
+logging.basicConfig(filename='logging.log', level=logging.DEBUG,
                     format="%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s")
 
 app = Flask(__name__)
@@ -109,6 +109,9 @@ def register():
         return redirect(url_for('index'))
     return render_template('register.html', title='Register', form=form)
 
+@app.route("/how_to_play")
+def how_to_play():
+    return render_template("how_to_play.html")
 
 @app.route("/games")
 def show_games():
