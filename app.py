@@ -15,7 +15,7 @@ from flask_wtf.csrf import CSRFProtect
 from flask import session
 from datetime import timedelta
 import time
-logging.basicConfig(filename='logging.log', level=logging.DEBUG,
+logging.basicConfig(filename='logging.log', level=logging.CRITICAL,
                     format="%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s")
 
 app = Flask(__name__)
@@ -233,7 +233,6 @@ def move_populate(game, user):
 
 @app.route('/stream/<string:params>',methods=["GET","POST"])
 def stream(params):
-    app.logger.info('%s hand', params)
     gameName, username = params.split("&")
     user = User.query.filter_by(username= username).first_or_404()
     game=Game.query.filter_by(gamename=gameName).first()
