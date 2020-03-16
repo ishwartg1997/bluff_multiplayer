@@ -140,7 +140,7 @@ def create_game():
 def return_hand(game, user):
     gm = GameMove.query.filter_by(game_id=game.id).order_by(GameMove.id.desc()).first()
     if(gm.player1_hand is None):
-        return " "
+        return "Hand not assigned yet"
     if game.player1_id == user.id:
         return gm.player1_hand
     else:
@@ -219,26 +219,28 @@ def get_turn(game):
     else:
         return game.player1_id
 
-def move_populate(game_id):
+def move_populate(game, user):
     time.sleep(0.01)
-    gm = GameMove.query.filter_by(game_id=game_id).order_by(GameMove.id.desc()).first()
-    game = Game.query.filter_by(id = game_id).first()
+    gm = GameMove.query.filter_by(game_id=game.id).order_by(GameMove.id.desc()).first()
     if "Start" == gm.player_action:
-        return "Waiting for players" + ";" + "N/A" + ";" + "N/A" + ";" +str(game.winner)
+        return "Waiting for players" + ";" + "N/A" + ";" + "N/A" + ";" +str(game.winner) + ";" + str(return_hand(game, user)) + ";" + str(get_turn(game) == user.id)
     else:
         if(gm.player_action=="seed hand"):
-            return "Waiting for first move" + ";" + str(game.player1_score) +";" + str(game.player2_score) + ";" + str(game.winner)
+            return "Waiting for first move" + ";" + str(game.player1_score) +";" + str(game.player2_score) + ";" + str(game.winner) + ";" + str(return_hand(game, user)) + ";" + str(get_turn(game) == user.id)
         else:
-            return str(gm.cards_bluffed) +";"  + str(game.player1_score) +";" + str(game.player2_score) + ";" + str(game.winner)
+            return str(gm.cards_bluffed) +";"  + str(game.player1_score) +";" + str(game.player2_score) + ";" + str(game.winner) + ";" + str(return_hand(game, user)) + ";" + str(get_turn(game) == user.id)
         
 
-@app.route('/stream/<gameName>',methods=["GET","POST"])
-def stream(gameName):
-    game_id=Game.query.filter_by(gamename=gameName).first().id
-    def event_stream(game_id):
+@app.route('/stream/<string:params>',methods=["GET","POST"])
+def stream(params):
+    app.logger.info('%s hand', params)
+    gameName, username = params.split("&")
+    user = User.query.filter_by(username= username).first_or_404()
+    game=Game.query.filter_by(gamename=gameName).first()
+    def event_stream(game, user):
         while True:
-            yield 'data: {}\n\n'.format(move_populate(game_id))
-    return Response(event_stream(game_id), mimetype="text/event-stream")
+            yield 'data: {}\n\n'.format(move_populate(game, user))
+    return Response(event_stream(game, user), mimetype="text/event-stream")
 
 
 @app.route("/call_bluff/<string:gameName>")
