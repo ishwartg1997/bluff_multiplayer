@@ -13,17 +13,28 @@ from flask_bcrypt import Bcrypt
 from werkzeug.urls import url_parse
 from flask_wtf.csrf import CSRFProtect
 from flask import session
+from flask_sse import sse
 from datetime import timedelta
 import time
-logging.basicConfig(filename='logging.log', level=logging.CRITICAL,
+from flask_redis import FlaskRedis
+from flask_sse import sse
+
+from flask_socketio import join_room, leave_room
+
+logging.basicConfig(filename='logging.log', level=logging.DEBUG,
                     format="%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s")
 
 app = Flask(__name__)
 app.config.from_object(Config)
+
+app.config["REDIS_URL"] = "redis://localhost"
+app.register_blueprint(sse, url_prefix='/stream')
+
 bcrypt = Bcrypt(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 login = LoginManager(app)
+
 login.login_view = 'login'
 login.refresh_view = 'relogin'
 login.needs_refresh_message = (u"Session timedout, please re-login")
@@ -219,6 +230,15 @@ def get_turn(game):
     else:
         return game.player1_id
 
+'''def get(game_id):
+    game_id = request.args.get("game_id")
+    username = request.args.get("username")
+    user = User.query.filter_by(username = current_user.username).first_or_404()
+    game = Game.query.filter_by(id=game_id).first()
+    gm = GameMove.query.filter_by(game_id=game.id).order_by(GameMove.id.desc()).first()
+    return jsonify({'last_move:': str(gm.cards_bluffed), 'p1_score': str(game.p1_score), 'p2_score': str(game.p2_score), 'winner': str(game.winner), 'hand': str(return_hand(game, user), 'turn': str(get_turn(game) == user)})
+'''
+
 def move_populate(game, user):
     time.sleep(0.01)
     gm = GameMove.query.filter_by(game_id=game.id).order_by(GameMove.id.desc()).first()
@@ -233,6 +253,7 @@ def move_populate(game, user):
 
 @app.route('/stream/<string:params>',methods=["GET","POST"])
 def stream(params):
+    app.logger.info('%s hand', params)
     gameName, username = params.split("&")
     user = User.query.filter_by(username= username).first_or_404()
     game=Game.query.filter_by(gamename=gameName).first()
@@ -274,23 +295,37 @@ def call_bluff(gameName):
         if user.id == game.player1_id:
             game.player1_score -= 2
             game.player2_score += 2
+            db.session.commit()
         else:
             game.player2_score -= 2
             game.player1_score += 2
+            db.session.commit()
     else:
+        if user.id == game.player1_id:
+            game.player1_score += 2
+            game.player2_score -= 2
+            db.session.commit()
+        else:
+            game.player2_score += 2
+            game.player1_score -= 2
+            db.session.commit()
         flash("You've caught a bluff!")
-    name = ""
+    winner_name = ""
     if game.player2_score >= 10:
-        name = User.query.filter_by(id=game.player2_id).first_or_404().username
+        winner_name = User.query.filter_by(id=game.player2_id).first_or_404().username
+        loser_name = User.query.filter_by(id=game.player1_id).first_or_404().username        
     if game.player1_score >= 10:
-        name = User.query.filter_by(id=game.player2_id).first_or_404().username
-    if(bool(name)):
-        winner = User.query.filter_by(id=game.player2_id).first_or_404()
+        winner_name = User.query.filter_by(id=game.player1_id).first_or_404().username
+        loser_name = User.query.filter_by(id=game.player2_id).first_or_404().username
+    if(bool(winner_name)):
+        winner = User.query.filter_by(username=winner_name).first_or_404()
         winner.win += 1
-        loser = User.query.filter_by(id=game.player1_id).first_or_404()
+        loser = User.query.filter_by(username=loser_name).first_or_404()
         loser.loss += 1
         game.completed = 1
-        game.winner = name
+        game.winner = winner.username
+    
+
     new_gm = GameMove(game_id=game.id, turn_player_id=user.id, turn_player_name=user.username,
                       player1_hand=gm.player1_hand,
                       player2_hand=gm.player2_hand, player_action="call a bluff",

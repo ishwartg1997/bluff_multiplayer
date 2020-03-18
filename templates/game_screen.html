@@ -13,11 +13,11 @@
     </tr>
     <tr>
         <td ALIGN="center">{{ game.player1_name }}</td>
-        <td ALIGN="center" id="p1_score">{{ game.player1_score }}</td>
+        <td ALIGN="center" id="p1_score"></td>
     </tr>
     <tr>
         <td ALIGN="center">{{ game.player2_name }}</td>
-        <td ALIGN="center" id="p2_score">{{ game.player2_score }}</td>
+        <td ALIGN="center" id="p2_score"></td>
     </tr>
 </table>
 <head>
@@ -30,7 +30,7 @@
     <div>
             Prev Move: <div id="prev_move"> <script>
 if(typeof(EventSource) !== "undefined") {
-  var prev_move = document.getElementById("prev_move");
+ var prev_move = document.getElementById("prev_move");
   var p1_score = document.getElementById("p1_score");
   var p2_score = document.getElementById("p2_score");
   var  user_hand = document.getElementById("user_hand");
