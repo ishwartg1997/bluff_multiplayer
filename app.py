@@ -279,14 +279,14 @@ def call_bluff(gameName):
             game.player1_score += 2
     else:
         flash("You've caught a bluff!")
-    name = ""
+    winner_name=""
     if game.player2_score >= 10:
         winner_name = User.query.filter_by(id=game.player2_id).first_or_404().username
         loser_name = User.query.filter_by(id=game.player2_id).first_or_404().username
     if game.player1_score >= 10:
         winner_name = User.query.filter_by(id=game.player1_id).first_or_404().username
         loser_name = User.query.filter_by(id=game.player2_id).first_or_404().username
-    if(bool(name)):
+    if(bool(winner_name)):
         winner = User.query.filter_by(username = winner_name).first_or_404()
         winner.win += 1
         loser = User.query.filter_by(username = loser_name).first_or_404()
