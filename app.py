@@ -281,16 +281,18 @@ def call_bluff(gameName):
         flash("You've caught a bluff!")
     name = ""
     if game.player2_score >= 10:
-        name = User.query.filter_by(id=game.player2_id).first_or_404().username
+        winner_name = User.query.filter_by(id=game.player2_id).first_or_404().username
+        loser_name = User.query.filter_by(id=game.player2_id).first_or_404().username
     if game.player1_score >= 10:
-        name = User.query.filter_by(id=game.player2_id).first_or_404().username
+        winner_name = User.query.filter_by(id=game.player1_id).first_or_404().username
+        loser_name = User.query.filter_by(id=game.player2_id).first_or_404().username
     if(bool(name)):
-        winner = User.query.filter_by(id=game.player2_id).first_or_404()
+        winner = User.query.filter_by(username = winner_name).first_or_404()
         winner.win += 1
-        loser = User.query.filter_by(id=game.player1_id).first_or_404()
+        loser = User.query.filter_by(username = loser_name).first_or_404()
         loser.loss += 1
         game.completed = 1
-        game.winner = name
+        game.winner = winner_name
     new_gm = GameMove(game_id=game.id, turn_player_id=user.id, turn_player_name=user.username,
                       player1_hand=gm.player1_hand,
                       player2_hand=gm.player2_hand, player_action="call a bluff",
