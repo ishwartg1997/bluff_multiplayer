@@ -282,7 +282,7 @@ def call_bluff(gameName):
     winner_name=""
     if game.player2_score >= 10:
         winner_name = User.query.filter_by(id=game.player2_id).first_or_404().username
-        loser_name = User.query.filter_by(id=game.player2_id).first_or_404().username
+        loser_name = User.query.filter_by(id=game.player1_id).first_or_404().username
     if game.player1_score >= 10:
         winner_name = User.query.filter_by(id=game.player1_id).first_or_404().username
         loser_name = User.query.filter_by(id=game.player2_id).first_or_404().username
