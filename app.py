@@ -14,21 +14,14 @@ from werkzeug.urls import url_parse
 from flask_wtf.csrf import CSRFProtect
 from flask import session
 from datetime import timedelta
-from moesifwsgi import MoesifMiddleware
 
 import time
+
 logging.basicConfig(filename='logging.log', level=logging.CRITICAL,
                     format="%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s")
 
 app = Flask(__name__)
 
-
-moesif_settings = {
-    'APPLICATION_ID': 'eyJhcHAiOiIyMjM6OTMiLCJ2ZXIiOiIyLjAiLCJvcmciOiIzNTk6MTA5IiwiaWF0IjoxNTg1OTU4NDAwfQ.F8SLJVU1dVpMGTVuPCkcyYquXhU2kr8f1_YhkkbzLA0',
-    'LOG_BODY': True,
-}
-
-app.wsgi_app = MoesifMiddleware(app.wsgi_app, moesif_settings)
 
 app.config.from_object(Config)
 bcrypt = Bcrypt(app)
